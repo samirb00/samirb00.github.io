@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .project {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .project h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Aspiring Information Systems Professional | Data & Tech Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m currently pursuing a B.S. in Information Systems with interests in data analytics 
+      and technology solutions. With experience in sales, teamwork, and customer service, 
+      I bring strong communication and adaptability skills. My goal is to apply my technical 
+      knowledge through internships and projects while building toward long-term business 
+      and tech entrepreneurship.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>📊 Sales Data Dashboard</h3>
+      <p>Analyzed sales data using SQL and visualized insights with Tableau. Focused on customer 
+      trends and business performance.</p>
+      <p><strong>Tech:</strong> SQL, Tableau, Excel</p>
+      <a href="https://github.com/yourusername/project1" target="_blank">GitHub Repo</a>
+    </div>
+
+    <div class="project">
+      <h3>🌐 Personal Website</h3>
+      <p>Built my own portfolio website using HTML, CSS, and GitHub Pages to showcase 
+      my projects and experience.</p>
+      <p><strong>Tech:</strong> HTML, CSS</p>
+      <a href="https://github.com/yourusername/project2" target="_blank">GitHub Repo</a>
+    </div>
+
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>
+      <a href="resume.pdf" target="_blank">📄 Download my resume</a>
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
