@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samir Bajraktarevic - Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007acc, #00bfa5);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Sticky Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #222;
+      padding: 0.75rem 0;
+      z-index: 1000;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #ffe600;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #007acc;
+    }
+
+    /* Projects */
+    .project {
+      background: linear-gradient(120deg, #ffffff, #e6f0ff);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #007acc;
+    }
+
+    /* Resume Button */
+    .btn-resume {
+      display: inline-block;
+      padding: 0.85rem 1.7rem;
+      background: linear-gradient(135deg, #007acc, #00bfa5);
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-resume:hover {
+      background: linear-gradient(135deg, #005f99, #009377);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: white;
+      margin-top: 3rem;
+    }
+    a {
+      color: #007acc;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* Mobile & Tablet Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      .project {
+        padding: 1rem;
+      }
+      .btn-resume {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 0.95rem;
+      }
+      .project h3 {
+        font-size: 1.1rem;
+      }
+      nav {
+        padding: 0.5rem 0;
+      }
+      .project img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Samir Bajraktarevic</h1>
+    <p>Aspiring Information Systems Professional | Data & Tech Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m currently pursuing a B.S. in Information Systems with interests in data analytics 
+      and technology solutions. With experience in sales, teamwork, and customer service, 
+      I bring strong communication and adaptability skills. My goal is to apply my technical 
+      knowledge through internships and projects while building toward long-term business 
+      and tech entrepreneurship.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <img src="sales-dashboard.png" alt="Sales Dashboard Screenshot" class="lightbox-img">
+      <h3>📊 Sales Data Dashboard</h3>
+      <p>Analyzed sales data using SQL and visualized insights with Tableau. Focused on customer 
+      trends and business performance.</p>
+      <p><strong>Tech:</strong> SQL, Tableau, Excel</p>
+      <a href="https://github.com/samirb00/project1" target="_blank">GitHub Repo</a>
+    </div>
+
+    <div class="project">
+      <img src="portfolio-website.png" alt="Portfolio Website Screenshot" class="lightbox-img">
+      <h3>🌐 Personal Website</h3>
+      <p>Built my own portfolio website using HTML, CSS, and GitHub Pages to showcase 
+      my projects and experience.</p>
+      <p><strong>Tech:</strong> HTML, CSS</p>
+      <a href="https://github.com/samirb00/samirb00.github.io" target="_blank">GitHub Repo</a>
+    </div>
+
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>
+      <a href="resume.pdf" class="btn-resume" target="_blank">📄 Download My Resume</a>
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sbajraktarevic0@gmail.com">sbajraktarevic0@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/samir-bajraktarevic-49996227b/" target="_blank">linkedin.com/in/samir-bajraktarevic-49996227b/</a></p>
+    <p>GitHub: <a href="https://github.com/samirb00" target="_blank">github.com/samirb00</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Samir Bajraktarevic. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const images = document.querySelectorAll('.lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
