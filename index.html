@@ -3,276 +3,457 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samir Bajraktarevic - Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Samir Bajraktarevic | Data & Business Analytics Portfolio</title>
+  <meta name="description" content="Portfolio of Samir Bajraktarevic, focused on data analytics, business analytics, CRM reporting, SQL, Excel, Tableau, and Power BI." />
   <style>
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: #1f2937;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Roboto', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* Header */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
     header {
-      background: linear-gradient(135deg, #007acc, #00bfa5);
-      color: white;
-      text-align: center;
-      padding: 2.5rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Sticky Navbar */
-    nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      background: #222;
-      padding: 0.75rem 0;
-      z-index: 1000;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #ffe600;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #fff;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(10px);
+      z-index: 10;
     }
 
-    /* Sections */
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 3px solid #007acc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: #007acc;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    /* Projects */
-    .project {
-      background: linear-gradient(120deg, #ffffff, #e6f0ff);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .project img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      cursor: pointer;
-    }
-    .project h3 {
-      margin-top: 0;
-      color: #007acc;
+    .logo {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1.05rem;
     }
 
-    /* Resume Button */
-    .btn-resume {
-      display: inline-block;
-      padding: 0.85rem 1.7rem;
-      background: linear-gradient(135deg, #007acc, #00bfa5);
-      color: white;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn-resume:hover {
-      background: linear-gradient(135deg, #005f99, #009377);
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #222;
-      color: white;
-      margin-top: 3rem;
-    }
-    a {
-      color: #007acc;
+    .hero {
+      padding: 82px 0 58px;
     }
 
-    /* Lightbox */
-    #lightbox {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 32px;
       align-items: center;
     }
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
       border-radius: 10px;
+      border: 1px solid var(--accent);
+      font-weight: 700;
     }
 
-    /* Mobile & Tablet Responsive */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      nav a {
-        display: block;
-        margin: 8px 0;
-        font-size: 1rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
-      .project {
-        padding: 1rem;
-      }
-      .btn-resume {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
-      }
+    .btn.primary {
+      background: var(--accent);
+      color: #082f49;
     }
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.8rem;
+    .btn.secondary {
+      color: var(--accent);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #111827, #0b1220);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-card h2 {
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+
+    .quick-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    section {
+      padding: 58px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2.section-title {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 820px;
+      margin-bottom: 26px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: var(--white);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .project ul {
+      margin-left: 18px;
+      margin-top: 12px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .timeline-item h3 {
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item .meta {
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .project,
+      .cards {
+        grid-template-columns: 1fr;
       }
-      header p {
-        font-size: 0.95rem;
-      }
-      .project h3 {
-        font-size: 1.1rem;
-      }
-      nav {
-        padding: 0.5rem 0;
-      }
-      .project img {
-        width: 100%;
-        height: auto;
+
+      header {
+        position: static;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Samir Bajraktarevic</h1>
-    <p>Aspiring Information Systems Professional | Data & Tech Enthusiast</p>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#top">Samir Bajraktarevic</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Data Analyst · Business Analyst · CRM Analyst</div>
+          <h1>Turning data into dashboards, reports, and business decisions.</h1>
+          <p>
+            I’m a CUNY School of Professional Studies student based in NYC/NJ, focused on data analytics,
+            business operations, CRM reporting, and practical dashboard projects using SQL, Excel, Tableau,
+            Power BI, and Salesforce CRM.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn secondary" href="mailto:sbajraktarevic0@gmail.com">Contact Me</a>
+          </div>
+        </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m currently pursuing a B.S. in Information Systems with interests in data analytics 
-      and technology solutions. With experience in sales, teamwork, and customer service, 
-      I bring strong communication and adaptability skills. My goal is to apply my technical 
-      knowledge through internships and projects while building toward long-term business 
-      and tech entrepreneurship.
-    </p>
-  </section>
+        <aside class="hero-card">
+          <h2>Current focus</h2>
+          <ul class="quick-list">
+            <li>Building portfolio projects in SQL, Excel, and Tableau</li>
+            <li>Applying for data, business, operations, and finance analyst roles</li>
+            <li>Strengthening CRM, KPI reporting, and dashboard storytelling skills</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-intro">
+          My background combines hands-on sales/operations experience with formal analytics training.
+          I’m interested in roles where I can clean data, analyze performance, build useful dashboards,
+          and help teams understand what is working, what is not, and where to improve.
+        </p>
+      </div>
+    </section>
 
-    <div class="project">
-      <img src="sales-dashboard.png" alt="Sales Dashboard Screenshot" class="lightbox-img">
-      <h3>📊 Sales Data Dashboard</h3>
-      <p>Analyzed sales data using SQL and visualized insights with Tableau. Focused on customer 
-      trends and business performance.</p>
-      <p><strong>Tech:</strong> SQL, Tableau, Excel</p>
-      <a href="https://github.com/samirb00/project1" target="_blank">GitHub Repo</a>
-    </div>
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-intro">Tools and areas I’m actively using in coursework, projects, and job preparation.</p>
+        <div class="skills">
+          <span class="skill">SQL</span>
+          <span class="skill">Excel</span>
+          <span class="skill">Tableau</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">Salesforce CRM</span>
+          <span class="skill">Data Cleaning</span>
+          <span class="skill">Dashboard Design</span>
+          <span class="skill">KPI Reporting</span>
+          <span class="skill">Variance Analysis</span>
+          <span class="skill">Data Governance</span>
+          <span class="skill">Business Analysis</span>
+          <span class="skill">Operations Reporting</span>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-      <img src="portfolio-website.png" alt="Portfolio Website Screenshot" class="lightbox-img">
-      <h3>🌐 Personal Website</h3>
-      <p>Built my own portfolio website using HTML, CSS, and GitHub Pages to showcase 
-      my projects and experience.</p>
-      <p><strong>Tech:</strong> HTML, CSS</p>
-      <a href="https://github.com/samirb00/samirb00.github.io" target="_blank">GitHub Repo</a>
-    </div>
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Project</h2>
+        <div class="project">
+          <article class="card">
+            <h3>Sales Data Analytics Dashboard</h3>
+            <p>
+              SQL analysis of sales and order data focused on revenue, profit, regional performance,
+              category performance, customer segments, monthly trends, and discount impact.
+              The final dashboard is designed to help users quickly understand business performance
+              and identify opportunities for improvement.
+            </p>
+            <ul>
+              <li>Cleaned and organized sales data in Excel</li>
+              <li>Used SQL to analyze KPIs, trends, segments, and profitability</li>
+              <li>Built a Tableau dashboard for executive-style reporting</li>
+              <li>Documented the workflow, findings, SQL queries, and repo structure</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn primary" href="https://github.com/samirb00/sales-data-analytics-dashboard" target="_blank" rel="noopener">View GitHub Repo</a>
+              <a class="btn secondary" href="https://public.tableau.com/" target="_blank" rel="noopener">Tableau Dashboard Link</a>
+            </div>
+          </article>
 
-  </section>
+          <aside class="card">
+            <h3>Project toolkit</h3>
+            <p>SQL · Excel · Tableau · Data Cleaning · KPI Reporting · Dashboard Storytelling</p>
+            <div class="skills">
+              <span class="skill">Revenue</span>
+              <span class="skill">Profit</span>
+              <span class="skill">Discounts</span>
+              <span class="skill">Segments</span>
+              <span class="skill">Regions</span>
+              <span class="skill">Trends</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>
-      <a href="resume.pdf" class="btn-resume" target="_blank">📄 Download My Resume</a>
-    </p>
-  </section>
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Sales & Operations Associate — Sunrun</h3>
+            <div class="meta">Sales operations · CRM workflows · KPI tracking</div>
+            <p>
+              Supported sales and operations activity through CRM data quality, workflow tracking,
+              customer-facing communication, and performance reporting.
+            </p>
+          </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sbajraktarevic0@gmail.com">sbajraktarevic0@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/samir-bajraktarevic-49996227b/" target="_blank">linkedin.com/in/samir-bajraktarevic-49996227b/</a></p>
-    <p>GitHub: <a href="https://github.com/samirb00" target="_blank">github.com/samirb00</a></p>
-  </section>
+          <div class="timeline-item">
+            <h3>B.S. Information Systems — CUNY School of Professional Studies</h3>
+            <div class="meta">Expected December 2026 · GPA 3.55</div>
+            <p>
+              Coursework and projects focused on information systems, analytics, business processes,
+              technology, and data-driven problem solving.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Google Professional Certificates</h3>
+            <div class="meta">Data Analytics · Cybersecurity · IT Support · Project Management</div>
+            <p>
+              Training across analytics workflows, technical support, cybersecurity fundamentals,
+              project organization, and practical business technology skills.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">
+          I’m currently looking for data analyst, business analyst, CRM analyst, operations analyst,
+          and finance analyst opportunities in the NYC/NJ area.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:sbajraktarevic0@gmail.com">sbajraktarevic0@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/samir-bajraktarevic-49996227b/" target="_blank" rel="noopener">linkedin.com/in/samir-bajraktarevic</a></p>
+          </div>
+          <div class="card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/samirb00" target="_blank" rel="noopener">github.com/samirb00</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Samir Bajraktarevic. All rights reserved.</p>
+    <div class="container">
+      © 2026 Samir Bajraktarevic · Data & Business Analytics Portfolio
+    </div>
   </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox">
-    <img id="lightbox-img" src="">
-  </div>
-
-  <script>
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const images = document.querySelectorAll('.lightbox-img');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  </script>
-
 </body>
 </html>
